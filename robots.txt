@@ -1,0 +1,5 @@
+
+User-agent: *
+Allow: /
+
+Sitemap: https://jorryn-crall.github.io/college-eats/sitemap.xml
