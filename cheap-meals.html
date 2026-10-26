@@ -3,62 +3,248 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Discover cheap college meals with affordable ingredients, simple recipes, and estimated costs per serving.">
+
+  <meta name="description" content="Find cheap meals for college students with budget-friendly ingredients, simple recipes, and estimated costs per serving.">
+
   <title>Cheap Meals for College Students | College Eats</title>
+
   <style>
     :root {
       --green: #245b45;
+      --dark-green: #183f30;
       --light-green: #eaf3e9;
       --cream: #fffaf0;
       --orange: #e89b52;
       --text: #29352e;
       --white: #ffffff;
+      --border: #e5e7df;
     }
-    * { box-sizing: border-box; }
-    body { margin: 0; font-family: Arial, Helvetica, sans-serif; background: var(--cream); color: var(--text); line-height: 1.7; }
-    .notice { background: #f1e7d4; color: #40382c; padding: 12px 18px; text-align: center; font-size: 0.85rem; }
-    header { background: var(--green); color: var(--white); padding: 24px 20px; }
-    .header-inner, main, .footer-inner { width: min(1080px, 100%); margin: auto; }
-    .brand { margin: 0; font-size: 2rem; letter-spacing: -1px; }
-    .tagline { margin: 0 0 16px; color: #e3efe5; }
-    nav { display: flex; flex-wrap: wrap; gap: 10px; }
-    nav a { color: var(--white); text-decoration: none; padding: 8px 12px; border: 1px solid #70917d; border-radius: 8px; font-weight: bold; font-size: 0.95rem; }
-    nav a:hover, nav a:focus { background: var(--white); color: var(--green); }
-    main { padding: 28px 20px 48px; }
-    .hero { background: var(--light-green); border-radius: 18px; padding: 36px 28px; margin-bottom: 28px; }
-    .eyebrow { color: var(--green); text-transform: uppercase; letter-spacing: 1.5px; font-size: 0.8rem; font-weight: bold; }
-    h1, h2, h3 { line-height: 1.25; }
-    h1 { font-size: clamp(2rem, 5vw, 3.2rem); margin: 8px 0 14px; }
-    h2 { color: var(--green); margin-top: 32px; }
-    h3 { margin-bottom: 8px; }
-    .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
-    .card { background: var(--white); border: 1px solid #e5e7df; border-radius: 14px; padding: 22px; }
-    .price { color: #9b5b20; font-weight: bold; }
-    .details { color: #536257; font-size: 0.95rem; }
-    .tip { background: #f8eddd; border-left: 5px solid var(--orange); border-radius: 8px; padding: 18px 22px; margin-top: 24px; }
-    footer { background: #183f30; color: var(--white); padding: 28px 20px; }
-    footer a { color: #f7d7a9; }
-    footer p { margin: 8px 0; }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--cream);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    .notice {
+      background: #f1e7d4;
+      color: #40382c;
+      padding: 12px 18px;
+      text-align: center;
+      font-size: 0.85rem;
+    }
+
+    header {
+      background: var(--green);
+      color: var(--white);
+      padding: 24px 20px;
+    }
+
+    .header-inner,
+    main,
+    .footer-inner {
+      width: min(1080px, 100%);
+      margin: 0 auto;
+    }
+
+    .brand {
+      margin: 0;
+      font-size: 2rem;
+      letter-spacing: -1px;
+      font-weight: bold;
+    }
+
+    .tagline {
+      margin: 0 0 16px;
+      color: #e3efe5;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px;
+    }
+
+    nav a {
+      display: inline-block;
+      color: var(--white);
+      text-decoration: none;
+      padding: 8px 12px;
+      border: 1px solid #70917d;
+      border-radius: 8px;
+      font-weight: bold;
+      font-size: 0.95rem;
+      transition: background-color 0.2s, color 0.2s;
+    }
+
+    nav a:hover,
+    nav a:focus-visible,
+    nav a[aria-current="page"] {
+      background: var(--white);
+      color: var(--green);
+    }
+
+    main {
+      padding: 28px 20px 48px;
+    }
+
+    section {
+      margin-bottom: 36px;
+    }
+
+    .hero {
+      background: var(--light-green);
+      border-radius: 18px;
+      padding: 36px 28px;
+      margin-bottom: 28px;
+    }
+
+    .eyebrow {
+      color: var(--green);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      font-size: 0.8rem;
+      font-weight: bold;
+    }
+
+    h1,
+    h2,
+    h3 {
+      line-height: 1.25;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      margin: 8px 0 14px;
+    }
+
+    h2 {
+      color: var(--green);
+      margin-top: 32px;
+    }
+
+    h3 {
+      margin-bottom: 8px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      margin: 20px 0 36px;
+    }
+
+    .card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 22px;
+    }
+
+    .card p {
+      margin-bottom: 12px;
+    }
+
+    .price {
+      color: #9b5b20;
+      font-weight: bold;
+    }
+
+    .details {
+      color: #536257;
+      font-size: 0.95rem;
+    }
+
+    .tip {
+      background: #f8eddd;
+      border-left: 5px solid var(--orange);
+      border-radius: 8px;
+      padding: 18px 22px;
+      margin-top: 24px;
+    }
+
+    footer {
+      background: var(--dark-green);
+      color: var(--white);
+      padding: 28px 20px;
+    }
+
+    footer a {
+      color: #f7d7a9;
+    }
+
+    footer a:hover,
+    footer a:focus-visible {
+      color: var(--white);
+    }
+
+    footer p {
+      margin: 8px 0;
+    }
+
     @media (max-width: 700px) {
-      .grid { grid-template-columns: 1fr; }
-      .hero { padding: 28px 20px; }
-      nav { gap: 8px; }
-      nav a { font-size: 0.9rem; }
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding: 28px 20px;
+      }
+
+      nav {
+        gap: 8px;
+      }
+
+      nav a {
+        font-size: 0.9rem;
+        padding: 8px 10px;
+      }
+    }
+
+    @media (max-width: 380px) {
+      header {
+        padding: 20px 14px;
+      }
+
+      main {
+        padding: 22px 14px 36px;
+      }
+
+      .notice {
+        padding: 10px 12px;
+        font-size: 0.8rem;
+      }
     }
   </style>
 </head>
+
 <body>
-  <div class="notice">This is a fictional website created for educational purposes as part of MKTG:4400 at the University of Iowa. It is not a real business.</div>
+  <div class="notice">
+    This is a fictional website created for educational purposes as part of MKTG:4400 at the University of Iowa. It is not a real business.
+  </div>
 
   <header>
     <div class="header-inner">
       <p class="brand">College Eats</p>
       <p class="tagline">Good food. Small budgets. Less stress.</p>
+
       <nav aria-label="Main navigation">
         <a href="index.html">Home</a>
         <a href="cheap-meals.html" aria-current="page">Cheap Meals</a>
         <a href="easy-college-meals.html">Easy College Meals</a>
         <a href="college-meal-prep.html">College Meal Prep</a>
+        <a href="college-grocery-list.html">College Grocery List</a>
       </nav>
     </div>
   </header>
@@ -66,18 +252,31 @@
   <main>
     <section class="hero">
       <p class="eyebrow">Eat more, spend less</p>
+
       <h1>Cheap Meals That Work for a College Budget</h1>
-      <p>Eating on a budget does not mean eating the same boring dinner every night. With affordable pantry staples and a few fresh ingredients, you can make filling meals without spending a fortune.</p>
-      <p>These cheap college meals use simple ingredients and everyday cooking methods. Estimated prices are illustrative and may vary by store and location.</p>
+
+      <p>
+        Eating on a budget does not mean eating the same boring dinner every
+        night. With affordable pantry staples and a few fresh ingredients,
+        you can make filling meals without spending a fortune.
+      </p>
+
+      <p>
+        These cheap college meals use simple ingredients and everyday cooking
+        methods. Estimated prices are illustrative and may vary by store and
+        location.
+      </p>
     </section>
 
     <section>
       <h2>4 Affordable Meals to Try</h2>
+
       <div class="grid">
         <article class="card">
           <h3>1. Cheesy Tomato Pasta</h3>
           <p class="price">Estimated cost: $1.50 per serving</p>
           <p class="details">Time: 20 minutes · Serves 2</p>
+
           <p><strong>Ingredients</strong></p>
           <ul>
             <li>4 ounces dry pasta</li>
@@ -86,6 +285,7 @@
             <li>1 teaspoon Italian seasoning</li>
             <li>Salt and pepper</li>
           </ul>
+
           <p><strong>Directions</strong></p>
           <ol>
             <li>Cook pasta according to the package directions.</li>
@@ -98,6 +298,7 @@
           <h3>2. Egg and Rice Bowl</h3>
           <p class="price">Estimated cost: $1.75 per serving</p>
           <p class="details">Time: 15 minutes · Serves 1</p>
+
           <p><strong>Ingredients</strong></p>
           <ul>
             <li>1 cup cooked rice</li>
@@ -106,6 +307,7 @@
             <li>1 teaspoon soy sauce</li>
             <li>1 teaspoon cooking oil</li>
           </ul>
+
           <p><strong>Directions</strong></p>
           <ol>
             <li>Heat the oil in a skillet and cook the vegetables until hot.</li>
@@ -118,6 +320,7 @@
           <h3>3. Loaded Baked Potato</h3>
           <p class="price">Estimated cost: $1.50 per serving</p>
           <p class="details">Time: 10–15 minutes in a microwave · Serves 1</p>
+
           <p><strong>Ingredients</strong></p>
           <ul>
             <li>1 medium russet potato</li>
@@ -126,6 +329,7 @@
             <li>2 tablespoons sliced green onion, optional</li>
             <li>Salt and pepper</li>
           </ul>
+
           <p><strong>Directions</strong></p>
           <ol>
             <li>Wash the potato and pierce it several times with a fork.</li>
@@ -138,6 +342,7 @@
           <h3>4. Chickpea Tomato Skillet</h3>
           <p class="price">Estimated cost: $2.00 per serving</p>
           <p class="details">Time: 15 minutes · Serves 2</p>
+
           <p><strong>Ingredients</strong></p>
           <ul>
             <li>1 can chickpeas, drained and rinsed</li>
@@ -146,6 +351,7 @@
             <li>1 teaspoon garlic powder</li>
             <li>1/2 teaspoon paprika</li>
           </ul>
+
           <p><strong>Directions</strong></p>
           <ol>
             <li>Add tomatoes, chickpeas, garlic powder, and paprika to a skillet.</li>
@@ -158,26 +364,62 @@
 
     <section>
       <h2>How to Save Money on College Groceries</h2>
+
       <ul>
-        <li><strong>Build meals around staples.</strong> Rice, oats, pasta, potatoes, and eggs can be used in several different recipes.</li>
-        <li><strong>Buy frozen produce.</strong> Frozen vegetables and fruit are convenient, last longer, and help reduce food waste.</li>
-        <li><strong>Reuse ingredients.</strong> Buy ingredients that can work in more than one meal instead of purchasing something new for every recipe.</li>
-        <li><strong>Compare unit prices.</strong> Check the cost per ounce or pound to compare package sizes.</li>
-        <li><strong>Plan before shopping.</strong> Check your pantry and refrigerator first so you do not buy duplicates.</li>
+        <li>
+          <strong>Build meals around staples.</strong>
+          Rice, oats, pasta, potatoes, and eggs can be used in several recipes.
+        </li>
+        <li>
+          <strong>Buy frozen produce.</strong>
+          Frozen vegetables and fruit are convenient, last longer, and help reduce food waste.
+        </li>
+        <li>
+          <strong>Reuse ingredients.</strong>
+          Buy ingredients that work in more than one meal instead of purchasing something new for every recipe.
+        </li>
+        <li>
+          <strong>Compare unit prices.</strong>
+          Check the cost per ounce or pound to compare package sizes.
+        </li>
+        <li>
+          <strong>Plan before shopping.</strong>
+          Check your pantry and refrigerator first so you do not buy duplicates.
+        </li>
       </ul>
+
       <div class="tip">
-        <strong>Budget challenge:</strong> Try planning five dinners around a short grocery list. Choose two or three overlapping ingredients and use pantry staples you already own to fill in the gaps.
+        <strong>Budget challenge:</strong>
+        Try planning five dinners around a short grocery list. Choose two or
+        three overlapping ingredients and use pantry staples you already own
+        to fill in the gaps.
       </div>
+
+      <p>
+        Ready to plan your shopping? Visit the
+        <a href="college-grocery-list.html">College Grocery List</a>
+        for affordable staples and shopping tips.
+      </p>
     </section>
   </main>
 
   <footer>
     <div class="footer-inner">
       <p><strong>College Eats</strong> | Practical recipes for student life.</p>
-      <p>Explore: <a href="index.html">Home</a> · <a href="cheap-meals.html">Cheap Meals</a> · <a href="easy-college-meals.html">Easy College Meals</a> · <a href="college-meal-prep.html">College Meal Prep</a></p>
-      <p>This is a fictional website created for educational purposes as part of MKTG:4400 at the University of Iowa. It is not a real business.</p>
+
+      <p>
+        Explore:
+        <a href="index.html">Home</a> ·
+        <a href="cheap-meals.html">Cheap Meals</a> ·
+        <a href="easy-college-meals.html">Easy College Meals</a> ·
+        <a href="college-meal-prep.html">College Meal Prep</a> ·
+        <a href="college-grocery-list.html">College Grocery List</a>
+      </p>
+
+      <p>
+        This is a fictional website created for educational purposes as part of MKTG:4400 at the University of Iowa. It is not a real business.
+      </p>
     </div>
   </footer>
 </body>
 </html>
-```
