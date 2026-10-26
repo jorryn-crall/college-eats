@@ -3,19 +3,30 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="College Eats helps college students find cheap meals, easy recipes, meal prep ideas, and affordable grocery lists.">
-  <title>College Eats | Affordable Food for College Life</title>
+
+  <meta name="description" content="Discover affordable college meal ideas, cheap meals, easy recipes, meal prep tips, and grocery lists designed for student budgets.">
+
+  <title>College Eats | Affordable College Meal Ideas</title>
+
   <style>
     :root {
       --green: #245b45;
+      --dark-green: #183f30;
       --light-green: #eaf3e9;
       --cream: #fffaf0;
       --orange: #e89b52;
       --text: #29352e;
       --white: #ffffff;
+      --border: #e5e7df;
     }
 
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
 
     body {
       margin: 0;
@@ -39,9 +50,11 @@
       padding: 24px 20px;
     }
 
-    .header-inner, main, .footer-inner {
+    .header-inner,
+    main,
+    .footer-inner {
       width: min(1080px, 100%);
-      margin: auto;
+      margin: 0 auto;
     }
 
     .brand {
@@ -59,10 +72,12 @@
     nav {
       display: flex;
       flex-wrap: wrap;
+      align-items: center;
       gap: 10px;
     }
 
     nav a {
+      display: inline-block;
       color: var(--white);
       text-decoration: none;
       padding: 8px 12px;
@@ -70,16 +85,24 @@
       border-radius: 8px;
       font-weight: bold;
       font-size: 0.95rem;
+      white-space: normal;
+      transition: background-color 0.2s, color 0.2s;
     }
 
-    nav a:hover, nav a:focus {
+    nav a:hover,
+    nav a:focus-visible,
+    nav a[aria-current="page"] {
       background: var(--white);
       color: var(--green);
     }
 
-    main { padding: 28px 20px 48px; }
+    main {
+      padding: 28px 20px 48px;
+    }
 
-    section { margin-bottom: 36px; }
+    section {
+      margin-bottom: 36px;
+    }
 
     .hero {
       background: var(--light-green);
@@ -96,12 +119,30 @@
       font-weight: bold;
     }
 
-    h1, h2, h3 { line-height: 1.25; }
-    h1 { font-size: clamp(2rem, 5vw, 3.4rem); margin: 8px 0 14px; }
-    h2 { color: var(--green); margin-top: 0; }
-    h3 { margin-bottom: 8px; }
+    h1,
+    h2,
+    h3 {
+      line-height: 1.25;
+    }
 
-    .hero p { max-width: 650px; font-size: 1.1rem; }
+    h1 {
+      font-size: clamp(2rem, 5vw, 3.4rem);
+      margin: 8px 0 14px;
+    }
+
+    h2 {
+      color: var(--green);
+      margin-top: 0;
+    }
+
+    h3 {
+      margin-bottom: 8px;
+    }
+
+    .hero p {
+      max-width: 650px;
+      font-size: 1.1rem;
+    }
 
     .button {
       display: inline-block;
@@ -109,12 +150,19 @@
       color: var(--white);
       padding: 12px 18px;
       margin-top: 10px;
+      border: 2px solid var(--green);
       border-radius: 8px;
       text-decoration: none;
       font-weight: bold;
+      transition: background-color 0.2s, color 0.2s;
     }
 
-    .button:hover, .button:focus { background: #163e2d; }
+    .button:hover,
+    .button:focus-visible {
+      background: var(--dark-green);
+      border-color: var(--dark-green);
+      color: var(--white);
+    }
 
     .grid {
       display: grid;
@@ -125,16 +173,24 @@
 
     .card {
       background: var(--white);
-      border: 1px solid #e5e7df;
+      border: 1px solid var(--border);
       border-radius: 14px;
       padding: 22px;
     }
 
-    .card p { margin-bottom: 12px; }
+    .card p {
+      margin-bottom: 12px;
+    }
 
-    .card a {
+    .card a,
+    main section > p a {
       color: var(--green);
       font-weight: bold;
+    }
+
+    .card a:hover,
+    main section > p a:hover {
+      color: var(--dark-green);
     }
 
     .price {
@@ -151,22 +207,60 @@
     }
 
     footer {
-      background: #183f30;
+      background: var(--dark-green);
       color: var(--white);
       padding: 28px 20px;
     }
 
-    footer a { color: #f7d7a9; }
-    footer p { margin: 8px 0; }
+    footer a {
+      color: #f7d7a9;
+    }
+
+    footer a:hover,
+    footer a:focus-visible {
+      color: var(--white);
+    }
+
+    footer p {
+      margin: 8px 0;
+    }
 
     @media (max-width: 700px) {
-      .grid { grid-template-columns: 1fr; }
-      .hero { padding: 30px 20px; }
-      nav { gap: 8px; }
-      nav a { font-size: 0.9rem; }
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding: 30px 20px;
+      }
+
+      nav {
+        gap: 8px;
+      }
+
+      nav a {
+        font-size: 0.9rem;
+        padding: 8px 10px;
+      }
+    }
+
+    @media (max-width: 380px) {
+      header {
+        padding: 20px 14px;
+      }
+
+      main {
+        padding: 22px 14px 36px;
+      }
+
+      .notice {
+        padding: 10px 12px;
+        font-size: 0.8rem;
+      }
     }
   </style>
 </head>
+
 <body>
   <div class="notice">
     This is a fictional website created for educational purposes as part of MKTG:4400 at the University of Iowa. It is not a real business.
@@ -176,6 +270,7 @@
     <div class="header-inner">
       <p class="brand">College Eats</p>
       <p class="tagline">Good food. Small budgets. Less stress.</p>
+
       <nav aria-label="Main navigation">
         <a href="index.html" aria-current="page">Home</a>
         <a href="cheap-meals.html">Cheap Meals</a>
@@ -189,22 +284,27 @@
   <main>
     <section class="hero">
       <p class="eyebrow">Your student-friendly kitchen guide</p>
+
       <h1>Eat well without spending your whole paycheck.</h1>
+
       <p>
         Between classes, work, and campus life, cooking can feel like one more
         thing on your to-do list. College Eats makes it easier with affordable
         recipes, simple ingredients, and practical meal plans designed for real
         college budgets.
       </p>
+
       <p>
         Whether you have a full kitchen, a microwave, or just a mini fridge,
         there is a meal idea for you.
       </p>
+
       <a class="button" href="cheap-meals.html">Find cheap meals</a>
     </section>
 
     <section>
       <h2>What are you hungry for?</h2>
+
       <div class="grid">
         <article class="card">
           <h3>Cheap Meals</h3>
@@ -250,31 +350,37 @@
 
     <section>
       <h2>Meet your new kitchen routine</h2>
+
       <p>
         College Eats was created around a simple idea: students should be able
         to plan practical meals without spending too much or making cooking
         unnecessarily complicated. Choose versatile ingredients, keep recipes
         manageable, and make a plan before shopping.
       </p>
+
       <div class="tip">
-        <strong>This week's student tip:</strong> Before buying groceries,
-        check what you already have. Rice, eggs, and frozen vegetables can
-        become a meal instead of forgotten ingredients at the back of a cupboard.
+        <strong>This week's student tip:</strong>
+        Before buying groceries, check what you already have. Rice, eggs, and
+        frozen vegetables can become a meal instead of forgotten ingredients
+        at the back of a cupboard.
       </div>
     </section>
 
     <section>
       <h2>Start with a few pantry basics</h2>
+
       <p>
         Rice, oats, pasta, eggs, peanut butter, canned tomatoes, and frozen
         vegetables are useful starting points. You do not need a fully stocked
         kitchen or expensive specialty ingredients to put together satisfying meals.
       </p>
+
       <p>
         Recipe prices throughout this fictional website are estimates for
         educational purposes. Actual costs depend on location, store, package
         size, and ingredients already on hand.
       </p>
+
       <p>
         Ready to plan your shopping? Use the
         <a href="college-grocery-list.html">college grocery list</a>
@@ -286,6 +392,7 @@
   <footer>
     <div class="footer-inner">
       <p><strong>College Eats</strong> | Practical recipes for student life.</p>
+
       <p>
         Explore:
         <a href="index.html">Home</a> ·
@@ -294,6 +401,7 @@
         <a href="college-meal-prep.html">College Meal Prep</a> ·
         <a href="college-grocery-list.html">College Grocery List</a>
       </p>
+
       <p>
         This is a fictional website created for educational purposes as part of MKTG:4400 at the University of Iowa. It is not a real business.
       </p>
