@@ -3,61 +3,257 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Find easy college meals with quick recipes, simple ingredients, and minimal cleanup for busy students.">
-  <title>Easy College Meals | College Eats</title>
+
+  <meta name="description" content="Explore easy college meals and quick recipes for busy students, with simple ingredients and practical ideas for everyday cooking.">
+
+  <title>Easy College Meals | Quick Student Recipes</title>
+
   <style>
     :root {
       --green: #245b45;
+      --dark-green: #183f30;
       --light-green: #eaf3e9;
       --cream: #fffaf0;
       --orange: #e89b52;
       --text: #29352e;
       --white: #ffffff;
+      --border: #e5e7df;
     }
-    * { box-sizing: border-box; }
-    body { margin: 0; font-family: Arial, Helvetica, sans-serif; background: var(--cream); color: var(--text); line-height: 1.7; }
-    .notice { background: #f1e7d4; color: #40382c; padding: 12px 18px; text-align: center; font-size: 0.85rem; }
-    header { background: var(--green); color: var(--white); padding: 24px 20px; }
-    .header-inner, main, .footer-inner { width: min(1080px, 100%); margin: auto; }
-    .brand { margin: 0; font-size: 2rem; letter-spacing: -1px; }
-    .tagline { margin: 0 0 16px; color: #e3efe5; }
-    nav { display: flex; flex-wrap: wrap; gap: 10px; }
-    nav a { color: var(--white); text-decoration: none; padding: 8px 12px; border: 1px solid #70917d; border-radius: 8px; font-weight: bold; font-size: 0.95rem; }
-    nav a:hover, nav a:focus { background: var(--white); color: var(--green); }
-    main { padding: 28px 20px 48px; }
-    .hero { background: var(--light-green); border-radius: 18px; padding: 36px 28px; margin-bottom: 28px; }
-    .eyebrow { color: var(--green); text-transform: uppercase; letter-spacing: 1.5px; font-size: 0.8rem; font-weight: bold; }
-    h1, h2, h3 { line-height: 1.25; }
-    h1 { font-size: clamp(2rem, 5vw, 3.2rem); margin: 8px 0 14px; }
-    h2 { color: var(--green); margin-top: 32px; }
-    h3 { margin-bottom: 8px; }
-    .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
-    .card { background: var(--white); border: 1px solid #e5e7df; border-radius: 14px; padding: 22px; }
-    .meta { color: #9b5b20; font-weight: bold; }
-    .tip { background: #f8eddd; border-left: 5px solid var(--orange); border-radius: 8px; padding: 18px 22px; margin-top: 24px; }
-    footer { background: #183f30; color: var(--white); padding: 28px 20px; }
-    footer a { color: #f7d7a9; }
-    footer p { margin: 8px 0; }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--cream);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    .notice {
+      background: #f1e7d4;
+      color: #40382c;
+      padding: 12px 18px;
+      text-align: center;
+      font-size: 0.85rem;
+    }
+
+    header {
+      background: var(--green);
+      color: var(--white);
+      padding: 24px 20px;
+    }
+
+    .header-inner,
+    main,
+    .footer-inner {
+      width: min(1080px, 100%);
+      margin: 0 auto;
+    }
+
+    .brand {
+      margin: 0;
+      font-size: 2rem;
+      letter-spacing: -1px;
+      font-weight: bold;
+    }
+
+    .tagline {
+      margin: 0 0 16px;
+      color: #e3efe5;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px;
+    }
+
+    nav a {
+      display: inline-block;
+      color: var(--white);
+      text-decoration: none;
+      padding: 8px 12px;
+      border: 1px solid #70917d;
+      border-radius: 8px;
+      font-weight: bold;
+      font-size: 0.95rem;
+      transition: background-color 0.2s, color 0.2s;
+    }
+
+    nav a:hover,
+    nav a:focus-visible,
+    nav a[aria-current="page"] {
+      background: var(--white);
+      color: var(--green);
+    }
+
+    main {
+      padding: 28px 20px 48px;
+    }
+
+    section {
+      margin-bottom: 36px;
+    }
+
+    .hero {
+      background: var(--light-green);
+      border-radius: 18px;
+      padding: 36px 28px;
+      margin-bottom: 28px;
+    }
+
+    .eyebrow {
+      color: var(--green);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      font-size: 0.8rem;
+      font-weight: bold;
+    }
+
+    h1,
+    h2,
+    h3 {
+      line-height: 1.25;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      margin: 8px 0 14px;
+    }
+
+    h2 {
+      color: var(--green);
+      margin-top: 32px;
+    }
+
+    h3 {
+      margin-bottom: 8px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      margin: 20px 0 36px;
+    }
+
+    .card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 22px;
+    }
+
+    .card p {
+      margin-bottom: 12px;
+    }
+
+    .meta {
+      color: #9b5b20;
+      font-weight: bold;
+    }
+
+    .card ul,
+    .card ol {
+      padding-left: 24px;
+    }
+
+    .tip {
+      background: #f8eddd;
+      border-left: 5px solid var(--orange);
+      border-radius: 8px;
+      padding: 18px 22px;
+      margin-top: 24px;
+    }
+
+    main section > p a {
+      color: var(--green);
+      font-weight: bold;
+    }
+
+    main section > p a:hover {
+      color: var(--dark-green);
+    }
+
+    footer {
+      background: var(--dark-green);
+      color: var(--white);
+      padding: 28px 20px;
+    }
+
+    footer a {
+      color: #f7d7a9;
+    }
+
+    footer a:hover,
+    footer a:focus-visible {
+      color: var(--white);
+    }
+
+    footer p {
+      margin: 8px 0;
+    }
+
     @media (max-width: 700px) {
-      .grid { grid-template-columns: 1fr; }
-      .hero { padding: 28px 20px; }
-      nav { gap: 8px; }
-      nav a { font-size: 0.9rem; }
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding: 28px 20px;
+      }
+
+      nav {
+        gap: 8px;
+      }
+
+      nav a {
+        font-size: 0.9rem;
+        padding: 8px 10px;
+      }
+    }
+
+    @media (max-width: 380px) {
+      header {
+        padding: 20px 14px;
+      }
+
+      main {
+        padding: 22px 14px 36px;
+      }
+
+      .notice {
+        padding: 10px 12px;
+        font-size: 0.8rem;
+      }
     }
   </style>
 </head>
+
 <body>
-  <div class="notice">This is a fictional website created for educational purposes as part of MKTG:4400 at the University of Iowa. It is not a real business.</div>
+  <div class="notice">
+    This is a fictional website created for educational purposes as part of MKTG:4400 at the University of Iowa. It is not a real business.
+  </div>
 
   <header>
     <div class="header-inner">
       <p class="brand">College Eats</p>
       <p class="tagline">Good food. Small budgets. Less stress.</p>
+
       <nav aria-label="Main navigation">
         <a href="index.html">Home</a>
         <a href="cheap-meals.html">Cheap Meals</a>
         <a href="easy-college-meals.html" aria-current="page">Easy College Meals</a>
         <a href="college-meal-prep.html">College Meal Prep</a>
+        <a href="college-grocery-list.html">College Grocery List</a>
       </nav>
     </div>
   </header>
@@ -65,17 +261,31 @@
   <main>
     <section class="hero">
       <p class="eyebrow">Simple recipes for busy days</p>
+
       <h1>Easy College Meals for Your Busiest Weeks</h1>
-      <p>When classes, assignments, work, and campus activities fill your schedule, cooking can feel overwhelming. These easy college meals use familiar ingredients and straightforward instructions, so you can spend less time figuring out dinner and more time enjoying it.</p>
-      <p>Each idea includes an estimated preparation time and the equipment you need. Choose recipes that fit your kitchen, whether you have a stove or just a microwave.</p>
+
+      <p>
+        When classes, assignments, work, and campus activities fill your
+        schedule, cooking can feel overwhelming. These easy college meals use
+        familiar ingredients and straightforward instructions, so you can spend
+        less time figuring out dinner and more time enjoying it.
+      </p>
+
+      <p>
+        Each idea includes an estimated preparation time and the equipment
+        you need. Choose recipes that fit your kitchen, whether you have a
+        stove or just a microwave.
+      </p>
     </section>
 
     <section>
       <h2>4 Easy Meals to Make This Week</h2>
+
       <div class="grid">
         <article class="card">
           <h3>1. Microwave Egg Mug</h3>
           <p class="meta">5 minutes · Microwave · 1 serving</p>
+
           <p><strong>Ingredients</strong></p>
           <ul>
             <li>2 eggs</li>
@@ -83,18 +293,23 @@
             <li>2 tablespoons shredded cheese</li>
             <li>Salt and pepper</li>
           </ul>
+
           <p><strong>Directions</strong></p>
           <ol>
             <li>Whisk the eggs and milk in a large microwave-safe mug or bowl.</li>
             <li>Microwave in 30-second intervals, stirring between intervals, until the eggs are fully cooked.</li>
             <li>Stir in the cheese and season to taste.</li>
           </ol>
-          <p class="meta">Easy upgrade: Add leftover vegetables or serve with toast.</p>
+
+          <p class="meta">
+            Easy upgrade: Add leftover vegetables or serve with toast.
+          </p>
         </article>
 
         <article class="card">
           <h3>2. Peanut Butter Banana Oats</h3>
           <p class="meta">5 minutes · Microwave · 1 serving</p>
+
           <p><strong>Ingredients</strong></p>
           <ul>
             <li>1/2 cup rolled oats</li>
@@ -103,18 +318,23 @@
             <li>1 tablespoon peanut butter</li>
             <li>A pinch of cinnamon</li>
           </ul>
+
           <p><strong>Directions</strong></p>
           <ol>
             <li>Combine oats and liquid in a large microwave-safe bowl.</li>
             <li>Microwave according to the oat package directions, watching for overflow.</li>
             <li>Top with banana, peanut butter, and cinnamon.</li>
           </ol>
-          <p class="meta">Easy upgrade: Add a little honey if you prefer extra sweetness.</p>
+
+          <p class="meta">
+            Easy upgrade: Add a little honey if you prefer extra sweetness.
+          </p>
         </article>
 
         <article class="card">
           <h3>3. Chicken and Rice Bowl</h3>
           <p class="meta">10 minutes · Microwave · 1 serving</p>
+
           <p><strong>Ingredients</strong></p>
           <ul>
             <li>1 cup cooked rice</li>
@@ -122,6 +342,7 @@
             <li>1/2 cup frozen vegetables</li>
             <li>1 tablespoon teriyaki sauce</li>
           </ul>
+
           <p><strong>Directions</strong></p>
           <ol>
             <li>Put the rice, chicken, and vegetables in a microwave-safe bowl.</li>
@@ -129,12 +350,16 @@
             <li>Microwave until everything is steaming hot, stirring halfway through. Follow package directions for reheating the chicken.</li>
             <li>Stir in teriyaki sauce and serve.</li>
           </ol>
-          <p class="meta">Easy upgrade: Use leftover cooked chicken to save time.</p>
+
+          <p class="meta">
+            Easy upgrade: Use leftover cooked chicken to save time.
+          </p>
         </article>
 
         <article class="card">
           <h3>4. Pesto Grilled Cheese</h3>
           <p class="meta">10 minutes · Skillet · 1 serving</p>
+
           <p><strong>Ingredients</strong></p>
           <ul>
             <li>2 slices bread</li>
@@ -142,52 +367,95 @@
             <li>1 teaspoon pesto</li>
             <li>1 teaspoon butter</li>
           </ul>
+
           <p><strong>Directions</strong></p>
           <ol>
             <li>Spread pesto on one slice of bread and add the cheese.</li>
             <li>Close the sandwich and butter the outside of both bread slices.</li>
             <li>Cook in a skillet over medium-low heat until both sides are golden and the cheese has melted.</li>
           </ol>
-          <p class="meta">Easy upgrade: Pair with tomato soup for a more filling meal.</p>
+
+          <p class="meta">
+            Easy upgrade: Pair with tomato soup for a more filling meal.
+          </p>
         </article>
       </div>
     </section>
 
     <section>
       <h2>Cooking With Limited Kitchen Equipment</h2>
+
       <div class="grid">
         <article class="card">
           <h3>If You Have a Microwave</h3>
-          <p>Try oatmeal, microwave egg mugs, baked potatoes, steamed frozen vegetables, and rice bowls. Use microwave-safe dishes and follow the cooking instructions for each ingredient.</p>
+          <p>
+            Try oatmeal, microwave egg mugs, baked potatoes, steamed frozen
+            vegetables, and rice bowls. Use microwave-safe dishes and follow
+            the cooking instructions for each ingredient.
+          </p>
         </article>
+
         <article class="card">
           <h3>If You Have a Stove</h3>
-          <p>Make pasta, quesadilla-style flatbreads, scrambled eggs, skillet rice, and grilled cheese. A single skillet and one pot can handle many basic recipes.</p>
+          <p>
+            Make pasta, quesadilla-style flatbreads, scrambled eggs, skillet
+            rice, and grilled cheese. A single skillet and one pot can handle
+            many basic recipes.
+          </p>
         </article>
       </div>
+
       <div class="tip">
-        <strong>The one-pan rule:</strong> On a busy night, choose a recipe that uses one pan or bowl. Less cleanup makes it easier to cook at home consistently.
+        <strong>The one-pan rule:</strong>
+        On a busy night, choose a recipe that uses one pan or bowl. Less
+        cleanup makes it easier to cook at home consistently.
       </div>
     </section>
 
     <section>
       <h2>Build Your Own Easy College Meal</h2>
-      <p>Start with one base, add a protein, include a fruit or vegetable, and finish with a sauce or seasoning you enjoy.</p>
+
+      <p>
+        Start with one base, add a protein, include a fruit or vegetable,
+        and finish with a sauce or seasoning you enjoy.
+      </p>
+
       <ul>
         <li><strong>Base:</strong> Rice, pasta, oats, bread, or potatoes.</li>
         <li><strong>Protein:</strong> Eggs, chicken, cheese, yogurt, or canned chickpeas.</li>
         <li><strong>Produce:</strong> Frozen vegetables, spinach, bananas, or apples.</li>
         <li><strong>Flavor:</strong> Pesto, salsa, soy sauce, garlic powder, or Italian seasoning.</li>
       </ul>
-      <p>Mix and match these ingredients to create meals that suit your preferences and budget without needing a complicated recipe.</p>
+
+      <p>
+        Mix and match these ingredients to create meals that suit your
+        preferences and budget without needing a complicated recipe.
+      </p>
+
+      <p>
+        Need ingredients for these meals? Visit the
+        <a href="college-grocery-list.html">College Grocery List</a>
+        to plan your shopping.
+      </p>
     </section>
   </main>
 
   <footer>
     <div class="footer-inner">
       <p><strong>College Eats</strong> | Practical recipes for student life.</p>
-      <p>Explore: <a href="index.html">Home</a> · <a href="cheap-meals.html">Cheap Meals</a> · <a href="easy-college-meals.html">Easy College Meals</a> · <a href="college-meal-prep.html">College Meal Prep</a></p>
-      <p>This is a fictional website created for educational purposes as part of MKTG:4400 at the University of Iowa. It is not a real business.</p>
+
+      <p>
+        Explore:
+        <a href="index.html">Home</a> ·
+        <a href="cheap-meals.html">Cheap Meals</a> ·
+        <a href="easy-college-meals.html">Easy College Meals</a> ·
+        <a href="college-meal-prep.html">College Meal Prep</a> ·
+        <a href="college-grocery-list.html">College Grocery List</a>
+      </p>
+
+      <p>
+        This is a fictional website created for educational purposes as part of MKTG:4400 at the University of Iowa. It is not a real business.
+      </p>
     </div>
   </footer>
 </body>
