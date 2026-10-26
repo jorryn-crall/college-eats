@@ -1,9 +1,10 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="College Eats helps college students find cheap meals, easy recipes, and budget-friendly weekly meal prep ideas.">
+  <meta name="description" content="College Eats helps college students find cheap meals, easy recipes, meal prep ideas, and affordable grocery lists.">
   <title>College Eats | Affordable Food for College Life</title>
   <style>
     :root {
@@ -48,9 +49,13 @@
       margin: 0;
       font-size: 2rem;
       letter-spacing: -1px;
+      font-weight: bold;
     }
 
-    .tagline { margin: 0 0 16px; color: #e3efe5; }
+    .tagline {
+      margin: 0 0 16px;
+      color: #e3efe5;
+    }
 
     nav {
       display: flex;
@@ -74,6 +79,8 @@
     }
 
     main { padding: 28px 20px 48px; }
+
+    section { margin-bottom: 36px; }
 
     .hero {
       background: var(--light-green);
@@ -112,7 +119,7 @@
 
     .grid {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 18px;
       margin: 20px 0 36px;
     }
@@ -125,8 +132,16 @@
     }
 
     .card p { margin-bottom: 12px; }
-    .card a { color: var(--green); font-weight: bold; }
-    .price { color: #9b5b20; font-weight: bold; }
+
+    .card a {
+      color: var(--green);
+      font-weight: bold;
+    }
+
+    .price {
+      color: #9b5b20;
+      font-weight: bold;
+    }
 
     .tip {
       background: #f8eddd;
@@ -138,94 +153,4 @@
 
     footer {
       background: #183f30;
-      color: var(--white);
-      padding: 28px 20px;
-    }
-
-    footer a { color: #f7d7a9; }
-    footer p { margin: 8px 0; }
-
-    @media (max-width: 700px) {
-      .grid { grid-template-columns: 1fr; }
-      .hero { padding: 30px 20px; }
-      nav { gap: 8px; }
-      nav a { font-size: 0.9rem; }
-    }
-  </style>
-</head>
-<body>
-  <div class="notice">This is a fictional website created for educational purposes as part of MKTG:4400 at the University of Iowa. It is not a real business.</div>
-
-  <header>
-    <div class="header-inner">
-      <p class="brand">College Eats</p>
-      <p class="tagline">Good food. Small budgets. Less stress.</p>
-      <nav aria-label="Main navigation">
-        <a href="index.html" aria-current="page">Home</a>
-        <a href="cheap-meals.html">Cheap Meals</a>
-        <a href="easy-college-meals.html">Easy College Meals</a>
-        <a href="college-meal-prep.html">College Meal Prep</a>
-      </nav>
-    </div>
-  </header>
-
-  <main>
-    <section class="hero">
-      <p class="eyebrow">Your student-friendly kitchen guide</p>
-      <h1>Eat well without spending your whole paycheck.</h1>
-      <p>Between classes, work, and campus life, cooking can feel like one more thing on your to-do list. College Eats makes it easier with affordable recipes, simple ingredients, and practical meal plans designed for real college budgets.</p>
-      <p>Whether you have a full kitchen, a microwave, or just a mini fridge, there is a meal idea for you.</p>
-      <a class="button" href="cheap-meals.html">Find cheap meals</a>
-    </section>
-
-    <section>
-      <h2>What are you hungry for?</h2>
-      <div class="grid">
-        <article class="card">
-          <h3>Cheap Meals</h3>
-          <p>Stretch your grocery budget with filling meals that use affordable staples such as rice, pasta, eggs, and frozen vegetables.</p>
-          <p class="price">Budget goal: $3 or less per serving</p>
-          <a href="cheap-meals.html">Explore budget recipes →</a>
-        </article>
-
-        <article class="card">
-          <h3>Easy College Meals</h3>
-          <p>Need dinner between class and a study session? Find quick recipes with simple steps and minimal cleanup.</p>
-          <p class="price">Made for busy schedules</p>
-          <a href="easy-college-meals.html">Find quick meals →</a>
-        </article>
-
-        <article class="card">
-          <h3>College Meal Prep</h3>
-          <p>Plan ahead with make-ahead meals, reusable grocery lists, and ingredients that work across several recipes.</p>
-          <p class="price">Less waste, fewer last-minute takeout orders</p>
-          <a href="college-meal-prep.html">Start meal prepping →</a>
-        </article>
-      </div>
-    </section>
-
-    <section>
-      <h2>Meet your new kitchen routine</h2>
-      <p>College Eats was created by fictional college student Mia Bennett, who wanted a better way to plan meals around a student budget. Her approach is simple: choose a few versatile ingredients, keep recipes manageable, and make a plan before shopping.</p>
-      <div class="tip">
-        <strong>This week's student tip:</strong> Before buying groceries, check what you already have. Half a bag of rice, a few eggs, and frozen vegetables can become a meal instead of forgotten ingredients at the back of a cupboard.
-      </div>
-    </section>
-
-    <section>
-      <h2>Start with a few pantry basics</h2>
-      <p>Rice, oats, pasta, canned beans, eggs, peanut butter, canned tomatoes, and frozen vegetables are useful starting points. You do not need a fully stocked kitchen or expensive specialty ingredients to put together satisfying meals.</p>
-      <p>Recipe prices throughout this fictional website are estimates for educational purposes. Actual costs depend on location, store, package size, and ingredients already on hand.</p>
-    </section>
-  </main>
-
-  <footer>
-    <div class="footer-inner">
-      <p><strong>College Eats</strong> | Practical recipes for student life.</p>
-      <p>Explore: <a href="index.html">Home</a> · <a href="cheap-meals.html">Cheap Meals</a> · <a href="easy-college-meals.html">Easy College Meals</a> · <a href="college-meal-prep.html">College Meal Prep</a></p>
-      <p>This is a fictional website created for educational purposes as part of MKTG:4400 at the University of Iowa. It is not a real business.</p>
-    </div>
-  </footer>
-</body>
-</html>
-```
+      color: var
