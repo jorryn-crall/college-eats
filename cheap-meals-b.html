@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, follow">
+  <meta name="description" content="Find cheap meals for college students with budget-friendly ingredients, simple recipes, and estimated costs per serving.">
+
+  <title>Cheap Meals for College Students | College Eats</title>
+
+  <style>
+    :root {
+      --green: #245b45;
+      --dark-green: #183f30;
+      --light-green: #eaf3e9;
+      --cream: #fffaf0;
+      --orange: #e89b52;
+      --text: #29352e;
+      --white: #ffffff;
+      --border: #e5e7df;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--cream);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    .notice {
+      background: #f1e7d4;
+      color: #40382c;
+      padding: 12px 18px;
+      text-align: center;
+      font-size: 0.85rem;
+    }
+
+    header {
+      background: var(--green);
+      color: var(--white);
+      padding: 24px 20px;
+    }
+
+    .header-inner,
+    main,
+    .footer-inner {
+      width: min(1080px, 100%);
+      margin: 0 auto;
+    }
+
+    .brand {
+      margin: 0;
+      font-size: 2rem;
+      letter-spacing: -1px;
+      font-weight: bold;
+    }
+
+    .tagline {
+      margin: 0 0 16px;
+      color: #e3efe5;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px;
+    }
+
+    nav a {
+      display: inline-block;
+      color: var(--white);
+      text-decoration: none;
+      padding: 8px 12px;
+      border: 1px solid #70917d;
+      border-radius: 8px;
+      font-weight: bold;
+      font-size: 0.95rem;
+      transition: background-color 0.2s, color 0.2s;
+    }
+
+    nav a:hover,
+    nav a:focus-visible,
+    nav a[aria-current="page"] {
+      background: var(--white);
+      color: var(--green);
+    }
+
+    main {
+      padding: 28px 20px 48px;
+    }
+
+    section {
+      margin-bottom: 36px;
+    }
+
+    .hero {
+      background: var(--light-green);
+      border-radius: 18px;
+      padding: 36px 28px;
+      margin-bottom: 28px;
+    }
+
+    .eyebrow {
+      color: var(--green);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      font-size: 0.8rem;
+      font-weight: bold;
+    }
+
+    h1,
+    h2,
+    h3 {
+      line-height: 1.25;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      margin: 8px 0 14px;
+    }
+
+    h2 {
+      color: var(--green);
+      margin-top: 32px;
+    }
+
+    h3 {
+      margin-bottom: 8px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      margin: 20px 0 36px;
+    }
+
+    .card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 22px;
+    }
+
+    .card p {
+      margin-bottom: 12px;
+    }
+
+    .price {
+      color: #9b5b20;
+      font-weight: bold;
+    }
+
+    .details {
+      color: #536257;
+      font-size: 0.95rem;
+    }
+
+    .tip {
+      background: #f8eddd;
+      border-left: 5px solid var(--orange);
+      border-radius: 8px;
+      padding: 18px 22px;
+      margin-top: 24px;
+    }
+
+    footer {
+      background: var(--dark-green);
+      color: var(--white);
+      padding: 28px 20px;
+    }
+
+    footer a {
+      color: #f7d7a9;
+    }
+
+    footer a:hover,
+    footer a:focus-visible {
+      color: var(--white);
+    }
+
+    footer p {
+      margin: 8px 0;
+    }
+
+    @media (max-width: 700px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding: 28px 20px;
+      }
+
+      nav {
+        gap: 8px;
+      }
+
+      nav a {
+        font-size: 0.9rem;
+        padding: 8px 10px;
+      }
+    }
+
+    @media (max-width: 380px) {
+      header {
+        padding: 20px 14px;
+      }
+
+      main {
+        padding: 22px 14px 36px;
+      }
+
+      .notice {
+        padding: 10px 12px;
+        font-size: 0.8rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="notice">
+    This is a fictional website created for educational purposes as part of MKTG:4400 at the University of Iowa. It is not a real business.
+  </div>
+
+  <header>
+    <div class="header-inner">
+      <p class="brand">College Eats</p>
+      <p class="tagline">Good food. Small budgets. Less stress.</p>
+
+      <nav aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="cheap-meals.html" aria-current="page">Cheap Meals</a>
+        <a href="easy-college-meals.html">Easy College Meals</a>
+        <a href="college-meal-prep.html">College Meal Prep</a>
+        <a href="college-grocery-list.html">College Grocery List</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <p class="eyebrow">Eat more, spend less</p>
+
+      <h1>Cheap College Meals: Budget-Friendly Recipes You Can Make in College</h1>
+
+      <p>
+        Finding cheap college meals that are filling, easy to make, and
+        affordable can be challenging on a student budget. With inexpensive
+        pantry staples and a few fresh ingredients, you can prepare
+        satisfying meals without spending a fortune.
+      </p>
+
+      <p>
+        These cheap college meals use simple ingredients, everyday cooking
+        methods, and estimated prices to help students plan affordable meals.
+        Whether you are cooking in a full kitchen or working with limited
+        equipment, these recipes offer practical ways to stretch your
+        grocery budget.
+      </p>
+    </section>
+
+    <section>
+      <h2>4 Affordable Meals to Try</h2>
+
+      <div class="grid">
+        <article class="card">
+          <h3>1. Cheesy Tomato Pasta</h3>
+          <p class="price">Estimated cost: $1.50 per serving</p>
+          <p class="details">Time: 20 minutes · Serves 2</p>
+
+          <p><strong>Ingredients</strong></p>
+          <ul>
+            <li>4 ounces dry pasta</li>
+            <li>1 cup canned crushed tomatoes</li>
+            <li>1/4 cup shredded cheese</li>
+            <li>1 teaspoon Italian seasoning</li>
+            <li>Salt and pepper</li>
+          </ul>
+
+          <p><strong>Directions</strong></p>
+          <ol>
+            <li>Cook pasta according to the package directions.</li>
+            <li>Warm the tomatoes and seasoning in a pan.</li>
+            <li>Mix in the drained pasta and cheese. Stir until combined and serve.</li>
+          </ol>
+        </article>
+
+        <article class="card">
+          <h3>2. Egg and Rice Bowl</h3>
+          <p class="price">Estimated cost: $1.75 per serving</p>
+          <p class="details">Time: 15 minutes · Serves 1</p>
+
+          <p><strong>Ingredients</strong></p>
+          <ul>
+            <li>1 cup cooked rice</li>
+            <li>2 eggs</li>
+            <li>1/2 cup frozen mixed vegetables</li>
+            <li>1 teaspoon soy sauce</li>
+            <li>1 teaspoon cooking oil</li>
+          </ul>
+
+          <p><strong>Directions</strong></p>
+          <ol>
+            <li>Heat the oil in a skillet and cook the vegetables until hot.</li>
+            <li>Add the rice and soy sauce and stir.</li>
+            <li>Cook the eggs in the skillet, scramble, and mix everything together.</li>
+          </ol>
+        </article>
+
+        <article class="card">
+          <h3>3. Loaded Baked Potato</h3>
+          <p class="price">Estimated cost: $1.50 per serving</p>
+          <p class="details">Time: 10–15 minutes in a microwave · Serves 1</p>
+
+          <p><strong>Ingredients</strong></p>
+          <ul>
+            <li>1 medium russet potato</li>
+            <li>1/4 cup shredded cheese</li>
+            <li>2 tablespoons plain Greek yogurt</li>
+            <li>2 tablespoons sliced green onion, optional</li>
+            <li>Salt and pepper</li>
+          </ul>
+
+          <p><strong>Directions</strong></p>
+          <ol>
+            <li>Wash the potato and pierce it several times with a fork.</li>
+            <li>Microwave on a microwave-safe plate, turning halfway through, until soft.</li>
+            <li>Split the potato, add cheese and yogurt, and season to taste.</li>
+          </ol>
+        </article>
+
+        <article class="card">
+          <h3>4. Chickpea Tomato Skillet</h3>
+          <p class="price">Estimated cost: $2.00 per serving</p>
+          <p class="details">Time: 15 minutes · Serves 2</p>
+
+          <p><strong>Ingredients</strong></p>
+          <ul>
+            <li>1 can chickpeas, drained and rinsed</li>
+            <li>1 cup canned diced tomatoes</li>
+            <li>1 cup fresh or frozen spinach</li>
+            <li>1 teaspoon garlic powder</li>
+            <li>1/2 teaspoon paprika</li>
+          </ul>
+
+          <p><strong>Directions</strong></p>
+          <ol>
+            <li>Add tomatoes, chickpeas, garlic powder, and paprika to a skillet.</li>
+            <li>Simmer for 8–10 minutes, stirring occasionally.</li>
+            <li>Stir in spinach until wilted and serve on its own or over rice.</li>
+          </ol>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <h2>How to Plan Cheap College Meals for the Week</h2>
+
+      <p>
+        Planning ahead is one of the easiest ways to keep college meals
+        affordable. Instead of choosing a different set of ingredients for
+        every dinner, build your weekly meal plan around a few versatile
+        foods. Rice, pasta, eggs, potatoes, canned beans, and frozen
+        vegetables can be used in several different recipes.
+      </p>
+
+      <h3>Choose Ingredients That Work Across Multiple Meals</h3>
+
+      <p>
+        Buying ingredients with more than one purpose helps reduce grocery
+        costs and food waste. For example, a bag of rice can be used for
+        egg and rice bowls, vegetable stir-fries, or chickpea skillets.
+        Canned tomatoes can become pasta sauce or the base for a simple
+        skillet meal.
+      </p>
+
+      <h3>Set a Weekly Food Budget</h3>
+
+      <p>
+        Decide how much you can spend on groceries before visiting the
+        store. Make a list of the meals you plan to prepare, check which
+        ingredients you already have, and estimate the cost of anything
+        you still need. Comparing unit prices can also help you identify
+        better values when shopping.
+      </p>
+
+      <h3>Prepare Ingredients Ahead of Time</h3>
+
+      <p>
+        Washing vegetables, cooking rice, or portioning ingredients ahead
+        of time can make preparing meals easier during a busy school week.
+        Store prepared ingredients safely and use refrigerated leftovers
+        within recommended food-safety timeframes.
+      </p>
+
+      <p>
+        A little planning can make cheap college meals easier to prepare,
+        help stretch your grocery budget, and reduce the temptation to
+        rely on last-minute takeout.
+      </p>
+    </section>
+
+    <section>
+      <h2>How to Save Money on College Groceries</h2>
+
+      <ul>
+        <li>
+          <strong>Build meals around staples.</strong>
+          Rice, oats, pasta, potatoes, and eggs can be used in several recipes.
+        </li>
+        <li>
+          <strong>Buy frozen produce.</strong>
+          Frozen vegetables and fruit are convenient, last longer, and help reduce food waste.
+        </li>
+        <li>
+          <strong>Reuse ingredients.</strong>
+          Buy ingredients that work in more than one meal instead of purchasing something new for every recipe.
+        </li>
+        <li>
+          <strong>Compare unit prices.</strong>
+          Check the cost per ounce or pound to compare package sizes.
+        </li>
+        <li>
+          <strong>Plan before shopping.</strong>
+          Check your pantry and refrigerator first so you do not buy duplicates.
+        </li>
+      </ul>
+
+      <div class="tip">
+        <strong>Budget challenge:</strong>
+        Try planning five dinners around a short grocery list. Choose two or
+        three overlapping ingredients and use pantry staples you already own
+        to fill in the gaps.
+      </div>
+
+      <p>
+        Ready to plan your shopping? Visit the
+        <a href="college-grocery-list.html">College Grocery List</a>
+        for affordable staples and shopping tips.
+      </p>
+
+      <p>
+        You can also explore <a href="college-meal-prep.html">College Meal Prep</a>
+        for more ways to prepare meals ahead of time and make your grocery
+        budget go further.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <p><strong>College Eats</strong> | Practical recipes for student life.</p>
+
+      <p>
+        Explore:
+        <a href="index.html">Home</a> ·
+        <a href="cheap-meals.html">Cheap Meals</a> ·
+        <a href="easy-college-meals.html">Easy College Meals</a> ·
+        <a href="college-meal-prep.html">College Meal Prep</a> ·
+        <a href="college-grocery-list.html">College Grocery List</a>
+      </p>
+
+      <p>
+        This is a fictional website created for educational purposes as part of MKTG:4400 at the University of Iowa. It is not a real business.
+      </p>
+    </div>
+  </footer>
+</body>
+</html>
